@@ -1,0 +1,4 @@
+services:
+  - class: Vojtechdobes\PHPStan\Conformance\ExpressionTypeResolverExtension
+    tags:
+      - phpstan.broker.expressionTypeResolverExtension
