@@ -1,0 +1,65 @@
+{
+	"authors": [
+		{
+			"name": "Vojtěch Dobeš",
+			"homepage": "https://vojtechdobes.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Vojtechdobes\\PHPStan\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Vojtechdobes\\Tests\\": "tests/"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": false
+		},
+		"sort-packages": true
+	},
+	"extra": {
+		"phpstan": {
+			"includes": [
+				"extension.neon"
+			]
+		}
+	},
+	"keywords": [
+		"ci",
+		"integration",
+		"normalization",
+		"phpstan",
+		"phpstan-rules",
+		"sanitization",
+		"static-analysis",
+		"static-code-analysis",
+		"validation"
+	],
+	"license": [
+		"BSD-3-Clause"
+	],
+	"name": "vojtech-dobes/phpstan-php-conformance",
+	"require": {
+		"php": "~8.4",
+		"vojtech-dobes/php-conformance": "dev-master"
+	},
+	"require-dev": {
+		"php-parallel-lint/php-parallel-lint": "^1.4.0",
+		"phpstan/phpstan": "^2.1.12",
+		"phpstan/phpstan-strict-rules": "^2.0.4",
+		"phpunit/phpunit": "^12.1",
+		"spaze/phpstan-disallowed-calls": "^4.5.0",
+		"tracy/tracy": "^2.10.9",
+		"vojtech-dobes/php-codestyle": "~0.2.0"
+	},
+	"scripts": {
+		"lint": "parallel-lint src tests",
+		"phpstan": "phpstan analyse --memory-limit 256M",
+		"test": "composer dump-autoload && phpunit tests"
+	},
+	"type": "phpstan-extension"
+}
